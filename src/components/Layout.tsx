@@ -39,7 +39,7 @@ export default function Layout({ children }: LayoutProps) {
               </Link>
               <Link
                 to="/add-pizza"
-                className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700"
+                className="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Add Pizza
               </Link>
@@ -47,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="md:hidden flex items-center">
               <button
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 focus:outline-none"
                 aria-expanded="false"
                 aria-label="Toggle menu"
               >
@@ -102,7 +102,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   to="/add-pizza"
                   onClick={closeMenu}
-                  className="bg-red-600 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-700"
+                  className="text-gray-700 hover:text-red-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Add Pizza
                 </Link>
