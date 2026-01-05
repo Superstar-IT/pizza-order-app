@@ -1,22 +1,23 @@
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { useMemo, useState } from 'react';
+import OrderDistributionChart from '../components/OrderDistributionChart';
+import OrderSummary from '../components/OrderSummary';
+import PizzaCard from '../components/PizzaCard';
+import PriceChart from '../components/PriceChart';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 import {
+  setCategory,
+  setMaxPrice,
   setSearchQuery,
   setSelectedIngredient,
-  setMaxPrice,
-  setCategory,
   setSortBy,
 } from '../store/slices/filterSlice';
 import { filterPizzas, sortPizzas } from '../utils/filterAndSort';
-import PizzaCard from '../components/PizzaCard';
-import OrderSummary from '../components/OrderSummary';
-import PriceChart from '../components/PriceChart';
-import OrderDistributionChart from '../components/OrderDistributionChart';
-import { useMemo } from 'react';
 
 export default function Dashboard() {
   const dispatch = useAppDispatch();
   const pizzas = useAppSelector((state) => state.pizzas.pizzas);
   const filters = useAppSelector((state) => state.filters);
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const allIngredients = useMemo(() => {
     const ingredients = new Set<string>();
@@ -51,11 +52,35 @@ export default function Dashboard() {
     <div className="space-y-6">
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              Filters & Search
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="bg-white rounded-lg shadow-md mb-6">
+            <button
+              onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+              className="w-full flex items-center justify-between p-6 text-left focus:outline-none rounded-t-lg"
+              aria-expanded={isFiltersOpen}
+            >
+              <h2 className="text-2xl font-bold text-gray-800">
+                Filters & Search
+              </h2>
+              <svg
+                className={`w-6 h-6 text-gray-600 transition-transform duration-200 ${
+                  isFiltersOpen ? 'transform rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {isFiltersOpen && (
+              <div className="px-6 pb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Search
@@ -135,7 +160,9 @@ export default function Dashboard() {
                   ))}
                 </select>
               </div>
-            </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mb-6">
