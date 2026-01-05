@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "Margherita",
+    "price": 5,
+    "ingredients": ["tomato", "mozzarella", "basil"],
+    "category": "classic",
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400"
+  },
+  {
+    "id": "2",
+    "name": "Hawaiana",
+    "price": 6,
+    "ingredients": ["tomato", "pineapple", "cheese", "ham"],
+    "category": "specialty",
+    "imageUrl": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400"
+  },
+  {
+    "id": "3",
+    "name": "Pepperoni",
+    "price": 7,
+    "ingredients": ["tomato", "mozzarella", "pepperoni"],
+    "category": "classic",
+    "imageUrl": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400"
+  },
+  {
+    "id": "4",
+    "name": "Vegetarian",
+    "price": 6.5,
+    "ingredients": ["tomato", "mozzarella", "bell peppers", "mushrooms", "olives"],
+    "category": "vegetarian",
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400"
+  },
+  {
+    "id": "5",
+    "name": "Quattro Formaggi",
+    "price": 8,
+    "ingredients": ["mozzarella", "gorgonzola", "parmesan", "ricotta"],
+    "category": "specialty",
+    "imageUrl": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400"
+  },
+  {
+    "id": "6",
+    "name": "BBQ Chicken",
+    "price": 8.5,
+    "ingredients": ["bbq sauce", "chicken", "red onions", "mozzarella"],
+    "category": "specialty",
+    "imageUrl": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400"
+  }
+]
